@@ -27,9 +27,9 @@ function Nav() {
     return (
         <nav>
             <ul class="nav-items">
-                <li><Button activated={active1.toString()} content="one" onClick={handleClick}/></li>
-                <li><Button activated={active2.toString()} content="two" onClick={handleClick}/></li>
-                <li><Button activated={active3.toString()} content="three" onClick={handleClick}/></li>
+                <li><Button id="01" activated={active1.toString()} content="one" onClick={handleClick}/></li>
+                <li><Button id="02" activated={active2.toString()} content="two" onClick={handleClick}/></li>
+                <li><Button id="03" activated={active3.toString()} content="three" onClick={handleClick}/></li>
             </ul>
         </nav>
     );

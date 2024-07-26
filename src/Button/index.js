@@ -3,7 +3,12 @@ import './index.css';
 
 function Button(props) {
   return (
-    <button>{props.content}</button>
+    <button 
+      class={`${props.activated === 'true' ? 'activated' : ''}`}
+      onClick={props.onClick}
+    >
+      {props.content}
+    </button>
   );
 }
 

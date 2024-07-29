@@ -6,7 +6,9 @@ import Shape from './Shape';
 const SHAPES = {
   box: 'box',
   sphere: 'sphere',
-  cone: 'cone'
+  cone: 'cone',
+  cylinder: 'cylinder',
+  torus: 'torus',
 }
 
 function App() {

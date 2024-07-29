@@ -27,10 +27,9 @@ function Shape(props) {
         geometry = box;
     }
 
-    const material = new THREE.MeshLambertMaterial( { color: 0xff0000 } );
-    const geo = new THREE.Mesh( geometry, material );
-    
-    function constructScene(geo) {
+    function constructScene(geometry) {
+        const material = new THREE.MeshLambertMaterial( { color: 0xff0000 } );
+        const geo = new THREE.Mesh( geometry, material );
         scene.add( geo );
         const light = new THREE.HemisphereLight( 0xffffbb, 0x080820, 1 );
         scene.add( light );
@@ -42,8 +41,6 @@ function Shape(props) {
         controls.update();
         
     }
-
-    constructScene(geo)
     
     function animate() {
         geo.rotation.x += 0.02;

@@ -27,27 +27,29 @@ function Shape(props) {
         geometry = box;
     }
 
-    const material = new THREE.MeshLambertMaterial( { color: 0xff0000 } );
-    const cube = new THREE.Mesh( geometry, material );
-    scene.add( cube );
-    const light = new THREE.HemisphereLight( 0xffffbb, 0x080820, 1 );
-    scene.add( light );
-    camera.position.z = 5;
-
-    const controls = new OrbitControls( camera, renderer.domElement );
-    const axesHelper = new THREE.AxesHelper(5);
-    scene.add(axesHelper);
-    controls.update();
-
-    function animate() {
-
-    cube.rotation.x += 0.02;
-    cube.rotation.y += 0.01;
-    cube.rotation.z += 0.005;
-
-    renderer.render( scene, camera );
-
+    function constructScene(geometry) {
+        const material = new THREE.MeshLambertMaterial( { color: 0xff0000 } );
+        const geo = new THREE.Mesh( geometry, material );
+        scene.add( geo );
+        const light = new THREE.HemisphereLight( 0xffffbb, 0x080820, 1 );
+        scene.add( light );
+        camera.position.z = 5;
+        
+        const controls = new OrbitControls( camera, renderer.domElement );
+        const axesHelper = new THREE.AxesHelper(5);
+        scene.add(axesHelper);
+        controls.update();
+        
     }
+    
+    function animate() {
+        geo.rotation.x += 0.02;
+        geo.rotation.y += 0.01;
+        geo.rotation.z += 0.005;
+
+        renderer.render( scene, camera );
+    }
+    
     animate();
   
     return (
